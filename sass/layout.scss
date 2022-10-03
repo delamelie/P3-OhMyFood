@@ -1,0 +1,53 @@
+      
+.location{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: bold;
+    background-color: #ededed;
+    border-top: #d9d7d7 2px solid;
+    .fa-location-dot{
+        padding-right: 30px;
+        border: 3px solid pink; 
+        }
+}
+
+.explore{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 35px 35px 35px;
+    background-color: $light-beige;
+    border-top: $light-beige 1px solid;
+        h1{
+        font-size: 21px; 
+        }
+}
+
+.rules{
+    margin: 40px 20px 60px 20px;
+}
+
+
+.icon.fa-store{
+    color: $purple;
+}
+
+.fa-mobile-screen-button, .fa-list{
+color: #4a4b4d;
+}
+
+.restaurants__list{
+    background-color: $light-beige;
+    padding: 20px 0 50px 0;
+    h2{
+        margin-left: 20px;  
+    }
+}
+
+
+    
+        
+    
+
+

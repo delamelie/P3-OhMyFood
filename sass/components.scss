@@ -1,0 +1,205 @@
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 200px;
+        margin: 20px;
+        }
+}
+
+.button{
+    padding: 20px;
+    background: linear-gradient(170deg, #eb78e1, $purple);
+    border-radius: 30px;
+    @include box-shadow;
+    a{
+        color: $white;
+    }
+}
+
+
+
+
+.rules__cardset__card{
+    display: flex;
+    position: relative;
+    height: 80px;
+    margin: 0 0 30px 10px;
+    background-color: $light-beige;
+    border-radius: 30px;
+    @include box-shadow;
+    a{
+        color: $black;
+    }
+    .card_number{
+        position: absolute;
+        left: -10px;
+        top: 25px;
+        background-color: $purple;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: $white;
+        border-radius: 50px;
+    }
+    .icon{
+        width: 60px;
+        text-align: center;
+        margin-left: 15px;
+        line-height: 80px;
+        color: $dark-grey;
+        font-size: 19px;
+    }
+    p{
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+
+    }
+}
+
+.restaurants__cardset a{
+    color: $black;
+}
+
+.restaurants__cardset__card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 220px;
+    margin: 30px 20px;
+    border-radius: 20px;
+    @include box-shadow;
+    img{
+        height: 75%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    .label{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        background-color: $mint;
+        padding: 8px 12px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #456b4f;
+    }
+    .restaurant__description{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 25%;
+        padding: 5px 20px 10px 15px;
+        background-color: $white;
+        border-radius: 0 0 20px 20px;
+    }
+    h3, p{
+        margin: 0;
+    }
+    .fa-heart{
+        font-size: 20px;
+    }
+}
+
+footer{
+    padding: 20px;
+    background-color: #423e42;
+    color: $white;
+    img{
+        width: 100px;
+        margin-bottom: 20px;
+        filter: invert(1);
+    }
+    a{
+        color: $white;
+    }
+    li{
+        padding-bottom: 15px;
+    }
+    .fa-handshake-angle, .fa-utensils{
+        width: 30px;
+    }
+}
+
+
+
+
+*****Page2******
+
+.restaurant__pic{
+    height: 300px;
+}
+
+.restaurant__pic img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+   }
+
+
+.restaurant__menu{
+    padding-bottom: 80px;
+    background-color: $light-beige;
+    border-radius: 30px 30px 0 0;
+    &__name{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin: 0 30px 0 20px;
+    }
+    h1{
+        font-family: 'Shrikhand', cursive;
+    }
+    .fa-heart{
+        font-size: 25px;
+    }
+    &__starters, &__maincourses, &__desserts{
+        margin: 20px 20px 50px 20px;
+    }
+    h2{
+        margin-bottom: 10px;
+        font-size: 19px;
+        font-weight: normal;
+    }
+    .line--mint{
+        height: 4px;
+        width: 50px;
+        background-color: $mint;
+    }
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: $white;
+        border-radius: 20px;
+        @include box-shadow;
+    }
+        h3{
+            margin: 0;
+        }
+        p{
+            margin: 5px 0 0 0;
+        }
+    &__description{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    &__dish{
+        width: 98%;
+    }
+    .tick__button{
+        display: none;
+    }
+}
+
+
+
+
+
