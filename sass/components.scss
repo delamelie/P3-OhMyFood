@@ -10,16 +10,23 @@ header{
 
 .button{
     padding: 20px;
-    background: linear-gradient(170deg, #eb78e1, $purple);
+    @include button-decoration;
     border-radius: 30px;
-    @include box-shadow;
+    @include button-shadow;
     a{
         color: $white;
     }
+    &:hover{
+        @include button-shadow_active;
+}
 }
 
 
-
+.rules__cardset{
+    @include desktop{
+        display: flex;
+    }
+}
 
 .rules__cardset__card{
     display: flex;
@@ -28,9 +35,13 @@ header{
     margin: 0 0 30px 10px;
     background-color: $light-beige;
     border-radius: 30px;
-    @include box-shadow;
-    a{
-        color: $black;
+    @include button-shadow;
+    @include tablet{
+        width: 70%;
+        margin: 30px auto; 
+    }
+    @include desktop{
+        width: 30%;
     }
     .card_number{
         position: absolute;
@@ -60,8 +71,23 @@ header{
     }
 }
 
+.restaurants__cardset{
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 20px 20px;
+    }
+    @include desktop{
+        flex-wrap: nowrap;
+    }
+}
+
 .restaurants__cardset a{
     color: $black;
+    @include tablet{
+        width: 50%
+    }
 }
 
 .restaurants__cardset__card{
@@ -71,7 +97,10 @@ header{
     height: 220px;
     margin: 30px 20px;
     border-radius: 20px;
-    @include box-shadow;
+    @include button-shadow;
+    @include tablet{
+        margin: 15px;
+    }
     img{
         height: 75%;
         width: 100%;
@@ -109,16 +138,28 @@ footer{
     padding: 20px;
     background-color: #423e42;
     color: $white;
+    @include tablet{
+        text-align: center;
+    }
     img{
         width: 100px;
         margin-bottom: 20px;
         filter: invert(1);
+        @include tablet{
+            display: inline-block;
+        }
     }
     a{
         color: $white;
+        
     }
     li{
         padding-bottom: 15px;
+        @include tablet{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
     .fa-handshake-angle, .fa-utensils{
         width: 30px;
@@ -149,6 +190,7 @@ footer{
        display: flex;
        justify-content: space-between;
        align-items: center;
+       text-align: center;
        margin: 0 30px 0 20px;
     }
     h1{
@@ -157,8 +199,18 @@ footer{
     .fa-heart{
         font-size: 25px;
     }
+    &__categories{
+        @include desktop{
+            display: flex;
+            justify-content: center;
+        }
+    }
     &__starters, &__maincourses, &__desserts{
         margin: 20px 20px 50px 20px;
+        @include desktop{
+            width: 30%;
+            font-size: 16px;
+        }
     }
     h2{
         margin-bottom: 10px;
@@ -173,29 +225,46 @@ footer{
     &__items{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
+        height: 40px;
         margin-top: 20px;
-        padding: 15px;
+        padding: 15px 0 15px 15px;
         background-color: $white;
         border-radius: 20px;
-        @include box-shadow;
+        @include button-shadow;
     }
+    &__dish{
+        width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+   }
         h3{
             margin: 0;
+            @include desktop{
+                font-size: 16px;
+            }
         }
         p{
             margin: 5px 0 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-    &__description{
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-    }
-    &__dish{
-        width: 98%;
+        &__price{
+            width: 15%;
+            height: 100%;
+            border-radius: 0 20px 20px 0;
+        }
+    strong{
+        /*display: none;*/
     }
     .tick__button{
         display: none;
+        height: 100%;
+        
+    }
+    .fa-circle-check{
+        color:$mint;
+        font-size: 30px;
     }
 }
 
