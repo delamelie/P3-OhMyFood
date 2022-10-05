@@ -6,19 +6,30 @@ header{
         width: 200px;
         margin: 20px;
         }
+    .fa-arrow-left{
+        position: absolute;
+        left: 20px;
+        top: 25px;
+        color: $black;
+    }
 }
 
 .button{
     padding: 20px;
     @include button-decoration;
-    border-radius: 30px;
+    @include button-shape;
     @include button-shadow;
     a{
         color: $white;
     }
     &:hover{
         @include button-shadow_active;
+        opacity: 0.8;
+        transition-duration: 0.5s;
+    }
 }
+
+.button.button__order{
 }
 
 
@@ -34,7 +45,7 @@ header{
     height: 80px;
     margin: 0 0 30px 10px;
     background-color: $light-beige;
-    border-radius: 30px;
+    @include button-shape;
     @include button-shadow;
     @include tablet{
         width: 70%;
@@ -42,6 +53,10 @@ header{
     }
     @include desktop{
         width: 30%;
+    }
+    &--purple
+    {
+        background-color: lighten($purple, 35%);
     }
     .card_number{
         position: absolute;
@@ -183,7 +198,7 @@ footer{
 
 
 .restaurant__menu{
-    padding-bottom: 80px;
+    padding-bottom: 40px;
     background-color: $light-beige;
     border-radius: 30px 30px 0 0;
     &__name{
@@ -203,6 +218,7 @@ footer{
         @include desktop{
             display: flex;
             justify-content: center;
+            align-items: center;
         }
     }
     &__starters, &__maincourses, &__desserts{
@@ -224,47 +240,56 @@ footer{
     }
     &__items{
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        height: 40px;
-        margin-top: 20px;
-        padding: 15px 0 15px 15px;
+        height: 70px;
+        margin-top: 30px;
         background-color: $white;
         border-radius: 20px;
         @include button-shadow;
-    }
+        white-space: nowrap;
+        &:hover  
+        .check__button{
+            transform: translate(0px);
+            transition: 1s;
+            width: 80px;
+        }
+        .fa-circle-check{
+            color:$white;
+            font-size: 30px;
+            /*transform: rotate(60deg);*/
+        }
+}
     &__dish{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 80%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-   }
+        padding: 0 20px;
+        }
         h3{
             margin: 0;
+            @include overflow;
             @include desktop{
                 font-size: 16px;
             }
         }
         p{
-            margin: 5px 0 0 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            margin: 0;
+            @include overflow;
         }
-        &__price{
-            width: 15%;
-            height: 100%;
-            border-radius: 0 20px 20px 0;
-        }
-    strong{
-        /*display: none;*/
-    }
-    .tick__button{
-        display: none;
+        .price{
+        width: 80px;
         height: 100%;
-        
+        font-weight: bold;
+        text-align: center;
+        line-height: 70px;
     }
-    .fa-circle-check{
-        color:$mint;
-        font-size: 30px;
+    .check__button{
+        width: 0px;
+        @include overflow;
+        text-align: center;
+        line-height: 80px;
+        background-color: $mint;
+        border-radius: 0 20px 20px 0;
     }
 }
 

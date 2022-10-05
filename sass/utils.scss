@@ -10,12 +10,21 @@ $black: #000000;
     background: linear-gradient(170deg, #eb78e1, $purple);
 }
 
+@mixin button-shape{
+    border-radius: 30px;
+}
+
 @mixin button-shadow{
     box-shadow: 2px 5px 8px #d9d7d7;
 }
 
 @mixin button-shadow_active{
-    box-shadow: 3px 6px 9px darken(#d9d7d7, 20%);
+    box-shadow: 4px 7px 10px darken(#d9d7d7, 20%);
+}
+
+@mixin overflow{
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @mixin tablet{
