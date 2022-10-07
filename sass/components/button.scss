@@ -1,0 +1,14 @@
+.button{
+    padding: 15px 20px;
+    @include button-decoration;
+    @include button-shape;
+    @include button-shadow;
+    a{
+        color: $white;
+    }
+    &:hover{
+        @include button-shadow_active;
+        opacity: 0.8;
+        transition-duration: 0.5s;
+    }
+}

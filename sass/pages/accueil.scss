@@ -1,0 +1,164 @@
+.location{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: bold;
+    background-color: #ededed;
+    border-top: #d9d7d7 2px solid;
+    &__icon{
+        display: flex;
+        padding-right: 30px; 
+        align-items: center;
+    }
+}
+
+.explore{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 35px 55px 35px;
+    background-color: $light-beige;
+    border-top: $light-beige 1px solid;
+        h1{
+            font-size: 21px; 
+            text-align: center;
+            margin-bottom: 0;
+        }
+        p{
+            text-align: center;
+            }
+}
+
+.rules{
+    margin: 40px 20px 60px 20px;
+}
+
+.rules__cardset{
+    @include desktop{
+        display: flex;
+    }
+}
+
+.rules__cardset__card{
+    display: flex;
+    position: relative;
+    height: 80px;
+    margin: 0 0 30px 10px;
+    background-color: $light-beige;
+    @include button-shape;
+    @include button-shadow;
+    @include tablet{
+        width: 70%;
+        margin: 30px auto; 
+    }
+    @include desktop{
+        width: 30%;
+    }
+    &:hover
+    {
+        background-color: lighten($purple, 35%);
+    }
+    .card_number{
+        position: absolute;
+        left: -10px;
+        top: 25px;
+        background-color: $purple;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: $white;
+        border-radius: 50px;
+    }
+    .icon{
+        width: 60px;
+        text-align: center;
+        margin-left: 15px;
+        line-height: 80px;
+        color: $dark-grey;
+        font-size: 19px;
+    }
+    .icon.fa-store{
+        color: $purple;
+    }
+    .fa-mobile-screen-button, .fa-list{
+    color: #4a4b4d;
+    }
+    p{
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+
+    }
+}
+
+.restaurants__cardset{
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 20px 20px;
+    }
+    @include desktop{
+        flex-wrap: nowrap;
+    }
+}
+
+.restaurants__list{
+    background-color: $light-beige;
+    padding: 20px 0 50px 0;
+    h2{
+        margin-left: 20px;  
+    }
+}
+
+.restaurants__cardset a{
+    color: $black;
+    @include tablet{
+       width: 50%
+    }
+}
+
+.restaurants__cardset__card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 220px;
+    margin: 20px;
+    border-radius: 20px;
+    @include button-shadow;
+    @include tablet{
+        margin: 15px;
+    }
+    img{
+        height: 72%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    .label{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        background-color: $mint;
+        padding: 8px 12px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #456b4f;
+    }
+    .restaurant__description{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 25%;
+        padding: 5px 20px 10px 15px;
+        background-color: $white;
+        border-radius: 0 0 20px 20px;
+    }
+    h3, p{
+        margin: 0;
+    }
+    .fa-heart{
+        font-size: 20px;
+    }
+}
