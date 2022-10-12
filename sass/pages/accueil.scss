@@ -158,7 +158,32 @@
     h3, p{
         margin: 0;
     }
+
     .fa-heart{
         font-size: 20px;
-    }
+        /*transition: background 600ms ease-in-out;*/
+        &:hover{
+        @include button-color;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        animation: heart-fill 800ms;
+        }
+      }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+

@@ -1,6 +1,10 @@
 
-@mixin button-decoration{
+@mixin button-color{
     background: linear-gradient(170deg, #eb78e1, $purple);
+}
+
+@mixin button-color-active{
+    background: linear-gradient(170deg, lighten(#eb78e1, 8%), lighten($purple, 8%));
 }
 
 @mixin button-shape{
