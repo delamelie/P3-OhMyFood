@@ -8,8 +8,8 @@
     height: 100%;
     background-color: $white;
     animation: loader 3s;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
     &--spinning{
         display: inline-block;
         width: 150px;
