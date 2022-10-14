@@ -1,4 +1,38 @@
+/****************************Loader**************************/
+/****************************Button**************************/
+/****************************Overflow**************************/
+/****************************Responsive**************************/
+/**************************************Loader****************************************/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+@keyframes loader-rotation {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.5;
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  /*90% {
+  opacity: 0.8;
+  }*/
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/**************************************Heart****************************************/
 @keyframes heart-fill {
   0% {
     opacity: 0.2;
@@ -8,6 +42,17 @@
   }
   100% {
     opacity: 1;
+  }
+}
+/**************************************Menu****************************************/
+@keyframes item-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-20%);
   }
 }
 body {
@@ -22,7 +67,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .container {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 
@@ -61,30 +106,34 @@ li {
 }
 
 .loader {
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  position: fixed;
-  z-index: 10;
-  /*opacity: 1;*/
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
   animation: loader 3s;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
 }
-
 .loader--spinning {
+  display: inline-block;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  display: inline-block;
   /*position: relative;*/
   border: 20px solid;
-  border-color: #99E2D0 #99E2D0 transparent transparent;
-  animation: rotation 3s linear;
+  border-color: #99E2D0 transparent;
+  animation: loader-rotation 3s linear;
 }
-.loader--spinning::after, .loader--spinning::before {
+.loader--spinning::after {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 15px solid;
+  border-color: transparent #9356DC;
   content: "";
   position: absolute;
   left: 0;
@@ -92,47 +141,28 @@ li {
   top: 0;
   bottom: 0;
   margin: auto;
-  border: 15px solid;
-  border-color: transparent transparent #9356DC #9356DC;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  animation: rotation 3s linear;
-  /*transform-origin: center center;*/
+  animation: loader-rotation 3s linear;
 }
 .loader--spinning::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   width: 50px;
   height: 50px;
-  border-color: #FF79DA #FF79DA transparent transparent;
-  animation: rotation 3s linear;
+  border-radius: 50%;
+  border: 10px solid;
+  border-color: #FF79DA transparent;
+  animation: loader-rotation 3s linear;
 }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loader {
-  0% {
-    opacity: 1;
-    z-index: 10;
-  }
-  90% {
-    opacity: 1;
-    z-index: 10;
-  }
-  100% {
-    opacity: 0;
-    z-index: -10;
-  }
-}
 .button {
-  padding: 15px 20px;
   position: relative;
   z-index: 1;
+  padding: 15px 20px;
   background: linear-gradient(170deg, #eb78e1, #9356DC);
   border-radius: 30px;
   box-shadow: 2px 5px 8px #d9d7d7;
@@ -155,18 +185,30 @@ li {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
   background: linear-gradient(170deg, #f09ce9, #a978e3);
   border-radius: 30px;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.5s;
+}
+
+.fa-heart {
+  font-size: 25px;
+  /*transition: background 600ms ease-in-out;*/
+}
+.fa-heart:hover {
+  background: linear-gradient(170deg, #eb78e1, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: heart-fill 800ms;
 }
 
 header {
-  width: 100%;
   display: flex;
-  position: relative;
   justify-content: center;
+  position: relative;
+  width: 100%;
   box-shadow: 0px 2px 10px #c2c2c2;
 }
 header img {
@@ -183,9 +225,9 @@ header .fa-arrow-left {
 
 footer {
   padding: 20px;
-  background-color: #423e42;
   color: #fff;
   line-height: 10px;
+  background-color: #423e42;
 }
 @media screen and (min-width: 768px) {
   footer {
@@ -219,20 +261,22 @@ footer .fa-handshake-angle, footer .fa-utensils {
   width: 30px;
 }
 
+/**************************************Localisation****************************************/
 .location {
   display: flex;
   justify-content: center;
   width: 100%;
   font-weight: bold;
   background-color: #ededed;
-  border-top: #d9d7d7 2px solid;
 }
 .location__icon {
   display: flex;
-  padding-right: 30px;
+  padding-right: 20px;
   align-items: center;
+  margin-left: -40px;
 }
 
+/**************************************Explorer****************************************/
 .explore {
   display: flex;
   flex-direction: column;
@@ -250,6 +294,7 @@ footer .fa-handshake-angle, footer .fa-utensils {
   text-align: center;
 }
 
+/**************************************Fonctionnement****************************************/
 .rules {
   margin: 40px 20px 60px 20px;
 }
@@ -315,6 +360,7 @@ footer .fa-handshake-angle, footer .fa-utensils {
   font-weight: bold;
 }
 
+/**************************************Restaurants****************************************/
 @media screen and (min-width: 768px) {
   .restaurants__cardset {
     display: flex;
@@ -388,22 +434,10 @@ footer .fa-handshake-angle, footer .fa-utensils {
 .restaurants__cardset__card h3, .restaurants__cardset__card p {
   margin: 0;
 }
-.restaurants__cardset__card .fa-heart {
-  font-size: 20px;
-  /*transition: background 600ms ease-in-out;*/
-}
-.restaurants__cardset__card .fa-heart:hover {
-  background: linear-gradient(170deg, #eb78e1, #9356DC);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  animation: heart-fill 800ms;
-}
 
 .restaurant__pic {
   height: 300px;
 }
-
 .restaurant__pic img {
   width: 100%;
   height: 300px;
@@ -414,21 +448,33 @@ footer .fa-handshake-angle, footer .fa-utensils {
   position: relative;
   margin-top: -30px;
   padding-bottom: 50px;
-  background-color: #f5f7f6;
   border-radius: 30px 30px 0 0;
+  background-color: #f5f7f6;
+  /*.check__button{
+      height: 100%;
+      width: 80px;
+      margin-right: -80px;
+      text-align: center;
+      border-radius: 0 20px 20px 0;
+      background-color: $color-tertiary;
+      transform: translateX(0);
+      transition: 0.8s ease-in-out;
+  }*/
 }
 .restaurant__menu__name {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  margin: 0 30px 0 20px;
+  margin: 0 20px;
+}
+@media screen and (min-width: 1100px) {
+  .restaurant__menu__name {
+    margin: 0 40px;
+  }
 }
 .restaurant__menu h1 {
   font-family: "Shrikhand", cursive;
-}
-.restaurant__menu .fa-heart {
-  font-size: 25px;
 }
 .restaurant__menu__categories {
   padding-bottom: 20px;
@@ -449,27 +495,36 @@ footer .fa-handshake-angle, footer .fa-utensils {
   }
 }
 .restaurant__menu h2 {
-  margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 40px;
   font-size: 19px;
   font-weight: normal;
 }
-.restaurant__menu .line--mint {
-  height: 4px;
-  width: 50px;
+.restaurant__menu h2::after {
+  content: "";
+  height: 3px;
+  width: 45px;
+  position: absolute;
+  left: 0;
+  top: 25px;
   background-color: #99E2D0;
 }
 .restaurant__menu__items {
   display: flex;
   align-items: center;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 2px 5px 8px #d9d7d7;
   height: 70px;
   margin-top: 20px;
   overflow: hidden;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 2px 5px 8px #d9d7d7;
 }
-.restaurant__menu__items:hover .check__button {
+.restaurant__menu__items:hover {
+  cursor: pointer;
+}
+.restaurant__menu__items:hover .check__button, .restaurant__menu__items:hover .price {
   width: 80px;
+  /*transform: translateX(-80px);*/
 }
 .restaurant__menu__items:hover .fa-circle-check {
   transform: rotate(0deg);
@@ -492,17 +547,19 @@ footer .fa-handshake-angle, footer .fa-utensils {
 }
 .restaurant__menu .price {
   width: 25px;
+  /*margin-right: 15px;*/
   padding: 0 15px;
   font-weight: bold;
+  transform: translateX(0);
+  transition: 0.8s ease-in-out;
 }
 .restaurant__menu .check__button {
-  background: #99E2D0;
   width: 0;
-  transition: 0.8s;
-  text-align: center;
   height: 100%;
-  background-color: #99E2D0;
+  text-align: center;
   border-radius: 0 20px 20px 0;
+  background-color: #99E2D0;
+  transition: 0.8s;
 }
 .restaurant__menu .fa-circle-check {
   color: #fff;
@@ -510,6 +567,18 @@ footer .fa-handshake-angle, footer .fa-utensils {
   line-height: 70px;
   transform: rotate(-180deg);
   transition: 500ms ease-in-out;
+}
+.restaurant__menu .first-item {
+  animation: item-pop 1s both;
+}
+.restaurant__menu .second-item {
+  animation: item-pop 1s 300ms both;
+}
+.restaurant__menu .third-item {
+  animation: item-pop 1s 600ms both;
+}
+.restaurant__menu .fourth-item {
+  animation: item-pop 1s 800ms both;
 }
 
 .btn {

@@ -1,16 +1,20 @@
+/**************************************Localisation****************************************/
+
 .location{
     display: flex;
     justify-content: center;
     width: 100%;
     font-weight: bold;
     background-color: #ededed;
-    border-top: #d9d7d7 2px solid;
     &__icon{
         display: flex;
-        padding-right: 30px; 
+        padding-right: 20px; 
         align-items: center;
+        margin-left: -40px;
     }
 }
+
+/**************************************Explorer****************************************/
 
 .explore{
     display: flex;
@@ -19,15 +23,18 @@
     padding: 15px 35px 55px 35px;
     background-color: $light-beige;
     border-top: $light-beige 1px solid;
-        h1{
-            font-size: 21px; 
-            text-align: center;
-            margin-bottom: 0;
-        }
-        p{
-            text-align: center;
-            }
+    h1{
+        font-size: 21px; 
+        text-align: center;
+        margin-bottom: 0;
+    }
+    p{
+        text-align: center;
+    }
 }
+
+
+/**************************************Fonctionnement****************************************/
 
 .rules{
     margin: 40px 20px 60px 20px;
@@ -54,15 +61,14 @@
     @include desktop{
         width: 30%;
     }
-    &:hover
-    {
-        background-color: lighten($purple, 35%);
+    &:hover{
+        background-color: lighten($color-primary, 35%);
     }
     .card_number{
         position: absolute;
         left: -10px;
         top: 25px;
-        background-color: $purple;
+        background-color: $color-primary;
         height: 30px;
         width: 30px;
         text-align: center;
@@ -79,10 +85,10 @@
         font-size: 19px;
     }
     .icon.fa-store{
-        color: $purple;
+        color: $color-primary;
     }
     .fa-mobile-screen-button, .fa-list{
-    color: #4a4b4d;
+        color: #4a4b4d;
     }
     p{
         display: flex;
@@ -91,6 +97,9 @@
 
     }
 }
+
+
+/**************************************Restaurants****************************************/
 
 .restaurants__cardset{
     @include tablet{
@@ -140,7 +149,7 @@
         position: absolute;
         right: 12px;
         top: 12px;
-        background-color: $mint;
+        background-color: $color-tertiary;
         padding: 8px 12px;
         font-size: 13px;
         font-weight: bold;
@@ -158,18 +167,6 @@
     h3, p{
         margin: 0;
     }
-
-    .fa-heart{
-        font-size: 20px;
-        /*transition: background 600ms ease-in-out;*/
-        &:hover{
-        @include button-color;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: bold;
-        animation: heart-fill 800ms;
-        }
-      }
 }
 
 

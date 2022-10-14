@@ -1,73 +1,45 @@
-.loader {
-    width: 100%;
-    height: 100%;
-    background-color: $white;
-    position: fixed;
-    z-index: 10;
-    /*opacity: 1;*/
+.loader{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
     animation: loader 3s;
-    animation-fill-mode: both;
-  }
-
-
-.loader--spinning{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: inline-block;
-    /*position: relative;*/
-    border: 20px solid;
-    border-color: $mint $mint transparent transparent;
-    animation: rotation 3s linear;
-        &::after, &::before{
-        content: '';  
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        border: 15px solid;
-        border-color: transparent transparent $purple $purple;
-        width: 100px;
-        height: 100px;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    &--spinning{
+        display: inline-block;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
-        animation: rotation 3s linear;
-        /*transform-origin: center center;*/
-        }
-        &::before {
-            width: 50px;
-            height: 50px;
-            border-color: $pink $pink transparent transparent;
-            animation: rotation 3s linear;
-        }
+        /*position: relative;*/
+        border: 20px solid;
+        border-color: $color-tertiary transparent;
+        @include loader-animation;
+            &::after{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 15px solid;
+            border-color: transparent $color-primary;
+            @include loader-position;
+            @include loader-animation;
+            }
+            &::before {
+                @include loader-position;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 10px solid;
+                border-color: $color-secondary transparent;
+                @include loader-animation;
+            }
+    }
 }
+
+
       
-  @keyframes rotation{
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  } 
 
-
-  
-  @keyframes loader {
-    0% {
-        opacity: 1;
-        z-index: 10;
-      }
-      90% {
-        opacity: 1;
-        z-index: 10;
-      }
-    100% {
-      opacity: 0;
-      z-index: -10;
-    }
-  } 

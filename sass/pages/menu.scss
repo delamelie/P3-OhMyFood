@@ -1,29 +1,29 @@
 .restaurant__pic{
     height: 300px;
-}
-.restaurant__pic img{
+    img{
         width: 100%;
         height: 300px;
         object-fit: cover;
-   }
+    }
+}
 .restaurant__menu{
     position: relative;
     margin-top: -30px;
     padding-bottom: 50px;
-    background-color: $light-beige;
     border-radius: 30px 30px 0 0;
+    background-color: $light-beige;
     &__name{
        display: flex;
        justify-content: space-between;
        align-items: center;
        text-align: center;
-       margin: 0 30px 0 20px;
+       margin: 0 20px;
+       @include desktop{
+        margin: 0 40px;
+    }
     }
     h1{
         font-family: 'Shrikhand', cursive;
-    }
-    .fa-heart{
-        font-size: 25px;
     }
     &__categories{
         padding-bottom: 20px;
@@ -40,67 +40,100 @@
         }
     }
     h2{
-        margin-bottom: 10px;
+        position: relative;
+        margin-bottom: 40px;
         font-size: 19px;
         font-weight: normal;
-    }
-    .line--mint{
-        height: 4px;
-        width: 50px;
-        background-color: $mint;
+        &::after{
+            content: "";
+            height: 3px;
+            width: 45px;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            background-color: $color-tertiary;
+        }
     }
     &__items{
         display: flex;
         align-items:center;
-        background-color: $white;
-        border-radius: 20px;
-        @include button-shadow;
         height: 70px;
         margin-top: 20px;
         overflow:hidden;
-        &:hover .check__button {
-          width: 80px;
+        background-color: $white;
+        border-radius: 20px;
+        @include button-shadow;
+        &:hover{
+            cursor: pointer;
+        }
+        &:hover .check__button,  &:hover .price{
+            width: 80px;
+            /*transform: translateX(-80px);*/
         }
         &:hover .fa-circle-check{
-          transform: rotate(0deg);
+            transform: rotate(0deg);
         }
     }
-      &__text {
+    &__text{
         width: 100%;
         overflow: hidden;
         padding: 10px;
-      }
-      h3, p {
+    }
+    h3, p{
         margin: 0;
         white-space: nowrap;
         @include overflow;
-            @include desktop{
-                font-size: 16px;
-            }
-      }
-      .price {
+        @include desktop{
+            font-size: 16px;
+        }
+    }
+    .price{
         width: 25px;
+        /*margin-right: 15px;*/
         padding: 0 15px;
         font-weight: bold;
-      }
-      .check__button {
-        background: $mint;
-        width: 0;
-        transition: 0.8s;
-        text-align: center;
+        transform: translateX(0);
+        transition: 0.8s ease-in-out;
+    }
+    /*.check__button{
         height: 100%;
-        background-color: $mint;
+        width: 80px;
+        margin-right: -80px;
+        text-align: center;
         border-radius: 0 20px 20px 0;
-      }
-      .fa-circle-check{
+        background-color: $color-tertiary;
+        transform: translateX(0);
+        transition: 0.8s ease-in-out;
+    }*/
+    .check__button{
+        width: 0;
+        height: 100%;
+        text-align: center;
+        border-radius: 0 20px 20px 0;
+        background-color: $color-tertiary;
+        transition: 0.8s;
+    }
+    .fa-circle-check{
         color:$white;
         font-size: 25px;
         line-height: 70px;
         transform: rotate(-180deg);
         transition: 500ms ease-in-out;
     }
+    .first-item{
+        animation: item-pop 1s both;
+    }
+    .second-item{
+        animation: item-pop 1s 300ms both;
+    }
+    .third-item{
+        animation: item-pop 1s 600ms both;
+    }
+    .fourth-item{
+        animation: item-pop 1s 800ms both;
+    }
 }
-       
+     
 .btn{
     display: flex;
     justify-content: center;

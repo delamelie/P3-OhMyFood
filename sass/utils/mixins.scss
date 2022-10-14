@@ -1,10 +1,27 @@
+/****************************Loader**************************/
+
+@mixin loader-position{
+    content: '';  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+@mixin loader-animation{
+    animation: loader-rotation 3s linear;
+}
+
+/****************************Button**************************/
 
 @mixin button-color{
-    background: linear-gradient(170deg, #eb78e1, $purple);
+    background: linear-gradient(170deg, #eb78e1, $color-primary);
 }
 
 @mixin button-color-active{
-    background: linear-gradient(170deg, lighten(#eb78e1, 8%), lighten($purple, 8%));
+    background: linear-gradient(170deg, lighten(#eb78e1, 8%), lighten($color-primary, 8%));
 }
 
 @mixin button-shape{
@@ -19,10 +36,16 @@
     box-shadow: 4px 7px 10px darken(#d9d7d7, 20%);
 }
 
+
+/****************************Overflow**************************/
+
 @mixin overflow{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
+/****************************Responsive**************************/
 
 @mixin tablet{
     @media screen and (min-width: 768px){

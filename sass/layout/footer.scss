@@ -1,8 +1,8 @@
 footer{
     padding: 20px;
-    background-color: #423e42;
     color: $white;
     line-height: 10px;
+    background-color: #423e42;
     @include tablet{
         text-align: center;
     }
