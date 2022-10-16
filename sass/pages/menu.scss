@@ -63,6 +63,12 @@
         background-color: $white;
         border-radius: 20px;
         @include button-shadow;
+        @include item-animation;
+        @for $i from 1 through 4{
+            &--#{$i} {
+                animation-delay: 300ms * $i;
+            }
+        }
         &:hover{
             cursor: pointer;
         }
@@ -105,21 +111,6 @@
         line-height: 70px;
         transform: rotate(-180deg);
         transition: 600ms ease-in-out;
-    }
-    .first-item{
-        @include item-animation;
-    }
-    .second-item{
-        @include item-animation;
-        animation-delay: 300ms;
-    }
-    .third-item{
-        @include item-animation;
-        animation-delay: 600ms;
-    }
-    .fourth-item{
-        @include item-animation;
-        animation-delay: 900ms;
     }
 }
      

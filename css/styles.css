@@ -500,6 +500,19 @@ footer .fa-handshake-angle, footer .fa-utensils {
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 2px 5px 8px #d9d7d7;
+  animation: item-pop 1200ms both;
+}
+.restaurant__menu__items--1 {
+  animation-delay: 300ms;
+}
+.restaurant__menu__items--2 {
+  animation-delay: 600ms;
+}
+.restaurant__menu__items--3 {
+  animation-delay: 900ms;
+}
+.restaurant__menu__items--4 {
+  animation-delay: 1200ms;
 }
 .restaurant__menu__items:hover {
   cursor: pointer;
@@ -545,21 +558,6 @@ footer .fa-handshake-angle, footer .fa-utensils {
   line-height: 70px;
   transform: rotate(-180deg);
   transition: 600ms ease-in-out;
-}
-.restaurant__menu .first-item {
-  animation: item-pop 900ms both;
-}
-.restaurant__menu .second-item {
-  animation: item-pop 900ms both;
-  animation-delay: 300ms;
-}
-.restaurant__menu .third-item {
-  animation: item-pop 900ms both;
-  animation-delay: 600ms;
-}
-.restaurant__menu .fourth-item {
-  animation: item-pop 900ms both;
-  animation-delay: 900ms;
 }
 
 .btn {
