@@ -97,26 +97,29 @@
         text-align: center;
         border-radius: 0 20px 20px 0;
         background-color: $color-tertiary;
-        transition: 0.8s ease-in-out;
+        transition: 600ms ease-in-out;
     }
     .fa-circle-check{
         color:$white;
         font-size: 25px;
         line-height: 70px;
         transform: rotate(-180deg);
-        transition: 500ms ease-in-out;
+        transition: 600ms ease-in-out;
     }
     .first-item{
-        animation: item-pop 1s both;
+        @include item-animation;
     }
     .second-item{
-        animation: item-pop 1s 300ms both;
+        @include item-animation;
+        animation-delay: 300ms;
     }
     .third-item{
-        animation: item-pop 1s 600ms both;
+        @include item-animation;
+        animation-delay: 600ms;
     }
     .fourth-item{
-        animation: item-pop 1s 800ms both;
+        @include item-animation;
+        animation-delay: 900ms;
     }
 }
      

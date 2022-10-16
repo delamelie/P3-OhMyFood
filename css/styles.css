@@ -1,6 +1,6 @@
 /****************************Loader**************************/
 /****************************Button**************************/
-/****************************Overflow**************************/
+/****************************Menu items**************************/
 /****************************Responsive**************************/
 /**************************************Loader****************************************/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
@@ -116,7 +116,6 @@ li {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  /*position: relative;*/
   border: 20px solid;
   border-color: #99E2D0 transparent;
   animation: loader-rotation 2s linear;
@@ -538,26 +537,29 @@ footer .fa-handshake-angle, footer .fa-utensils {
   text-align: center;
   border-radius: 0 20px 20px 0;
   background-color: #99E2D0;
-  transition: 0.8s ease-in-out;
+  transition: 600ms ease-in-out;
 }
 .restaurant__menu .fa-circle-check {
   color: #fff;
   font-size: 25px;
   line-height: 70px;
   transform: rotate(-180deg);
-  transition: 500ms ease-in-out;
+  transition: 600ms ease-in-out;
 }
 .restaurant__menu .first-item {
-  animation: item-pop 1s both;
+  animation: item-pop 900ms both;
 }
 .restaurant__menu .second-item {
-  animation: item-pop 1s 300ms both;
+  animation: item-pop 900ms both;
+  animation-delay: 300ms;
 }
 .restaurant__menu .third-item {
-  animation: item-pop 1s 600ms both;
+  animation: item-pop 900ms both;
+  animation-delay: 600ms;
 }
 .restaurant__menu .fourth-item {
-  animation: item-pop 1s 800ms both;
+  animation: item-pop 900ms both;
+  animation-delay: 900ms;
 }
 
 .btn {

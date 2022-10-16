@@ -37,13 +37,17 @@
 }
 
 
-/****************************Overflow**************************/
+/****************************Menu items**************************/
 
 @mixin overflow{
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+
+@mixin item-animation{
+    animation: item-pop 900ms both;
+}
 
 /****************************Responsive**************************/
 
