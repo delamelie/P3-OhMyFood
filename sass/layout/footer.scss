@@ -10,9 +10,6 @@ footer{
         width: 100px;
         margin-bottom: 10px;
         filter: invert(1);
-        @include tablet{
-            display: inline-block;
-        }
     }
     a{
         color: $white;

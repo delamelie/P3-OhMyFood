@@ -11,7 +11,7 @@
 }
 
 @mixin loader-animation{
-    animation: loader-rotation 2s linear;
+    animation: loader-rotation 2s linear infinite;
 }
 
 /****************************Button**************************/
@@ -34,19 +34,6 @@
 
 @mixin button-shadow_active{
     box-shadow: 4px 7px 10px darken(#d9d7d7, 20%);
-}
-
-
-/****************************Menu items**************************/
-
-@mixin overflow{
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-
-@mixin item-animation{
-    animation: item-pop 1200ms both;
 }
 
 /****************************Responsive**************************/

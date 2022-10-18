@@ -62,8 +62,8 @@
         overflow:hidden;
         background-color: $white;
         border-radius: 20px;
+        animation: item-pop 1200ms both;
         @include button-shadow;
-        @include item-animation;
         @for $i from 1 through 4{
             &--#{$i} {
                 animation-delay: 300ms * $i;
@@ -86,8 +86,9 @@
     }
     h3, p{
         margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
         white-space: nowrap;
-        @include overflow;
         @include desktop{
             font-size: 16px;
         }

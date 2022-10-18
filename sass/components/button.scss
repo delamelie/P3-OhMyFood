@@ -2,6 +2,8 @@
     position: relative;
     z-index: 1;
     padding: 15px 20px;
+    /*opacity: 1;
+    transition-duration: 0.5s;*/
     @include button-color;
     @include button-shape;
     @include button-shadow;
@@ -14,8 +16,7 @@
         opacity: 1;
         }
         @include button-shadow_active;
-        /*opacity: 0.8;
-        transition-duration: 0.5s;*/
+        /*opacity: 0.6;*/
     }
 
     &::after {

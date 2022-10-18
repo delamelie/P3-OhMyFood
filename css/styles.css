@@ -1,6 +1,5 @@
 /****************************Loader**************************/
 /****************************Button**************************/
-/****************************Menu items**************************/
 /****************************Responsive**************************/
 /**************************************Loader****************************************/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
@@ -108,8 +107,8 @@ li {
   height: 100%;
   background-color: #fff;
   animation: loader 2s;
-  animation-fill-mode: both;
-  -webkit-animation-fill-mode: both;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
 }
 .loader--spinning {
   display: inline-block;
@@ -118,7 +117,7 @@ li {
   border-radius: 50%;
   border: 20px solid;
   border-color: #99E2D0 transparent;
-  animation: loader-rotation 2s linear;
+  animation: loader-rotation 2s linear infinite;
 }
 .loader--spinning::after {
   width: 100px;
@@ -133,7 +132,7 @@ li {
   top: 0;
   bottom: 0;
   margin: auto;
-  animation: loader-rotation 2s linear;
+  animation: loader-rotation 2s linear infinite;
 }
 .loader--spinning::before {
   content: "";
@@ -148,13 +147,15 @@ li {
   border-radius: 50%;
   border: 10px solid;
   border-color: #FF79DA transparent;
-  animation: loader-rotation 2s linear;
+  animation: loader-rotation 2s linear infinite;
 }
 
 .button {
   position: relative;
   z-index: 1;
   padding: 15px 20px;
+  /*opacity: 1;
+  transition-duration: 0.5s;*/
   background: linear-gradient(170deg, #eb78e1, #9356DC);
   border-radius: 30px;
   box-shadow: 2px 5px 8px #d9d7d7;
@@ -164,8 +165,7 @@ li {
 }
 .button:hover {
   box-shadow: 4px 7px 10px #a7a3a3;
-  /*opacity: 0.8;
-  transition-duration: 0.5s;*/
+  /*opacity: 0.6;*/
 }
 .button:hover::after {
   opacity: 1;
@@ -193,7 +193,7 @@ li {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-  animation: heart-fill 800ms;
+  animation: heart-fill 600ms ease-in-out;
 }
 
 header {
@@ -230,11 +230,6 @@ footer img {
   width: 100px;
   margin-bottom: 10px;
   filter: invert(1);
-}
-@media screen and (min-width: 768px) {
-  footer img {
-    display: inline-block;
-  }
 }
 footer a {
   color: #fff;
@@ -499,8 +494,8 @@ footer .fa-handshake-angle, footer .fa-utensils {
   overflow: hidden;
   background-color: #fff;
   border-radius: 20px;
-  box-shadow: 2px 5px 8px #d9d7d7;
   animation: item-pop 1200ms both;
+  box-shadow: 2px 5px 8px #d9d7d7;
 }
 .restaurant__menu__items--1 {
   animation-delay: 300ms;
@@ -530,9 +525,9 @@ footer .fa-handshake-angle, footer .fa-utensils {
 }
 .restaurant__menu h3, .restaurant__menu p {
   margin: 0;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media screen and (min-width: 1100px) {
   .restaurant__menu h3, .restaurant__menu p {
